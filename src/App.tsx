@@ -135,7 +135,7 @@ export default function App() {
                 <span className="text-brand-green">Façadier</span> en Vendée.
               </h1>
               <p className="text-lg text-slate-600 mb-10 max-w-lg leading-relaxed">
-                Entreprise de proximité basée à Saint-Hilaire-des-Loges.
+                Entreprise de proximité basée à Saint-Hilaire-des-Loges.<br />
                 <strong>J'interviens chez vous dans toute la Vendée</strong> pour vos travaux de toiture, façade et jardin. Chantier
                 propre, travail soigné, devis gratuit.
               </p>
