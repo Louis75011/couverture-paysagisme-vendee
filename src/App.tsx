@@ -79,15 +79,20 @@ export default function App() {
 
   return (
     <div className="min-h-screen font-sans">
+      {/* Skip navigation */}
+      <a href="#contenu-principal" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-brand-green focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-bold">
+        Aller au contenu
+      </a>
 
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-gradient-to-r from-brand-sand-medium/90 to-brand-sand-dark/90 backdrop-blur-md z-50 border-b border-brand-earth/10">
+      <nav aria-label="Navigation principale" className="fixed top-0 w-full bg-gradient-to-r from-brand-sand-medium/90 to-brand-sand-dark/90 backdrop-blur-md z-50 border-b border-brand-earth/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img
               src="/images/logo-maxime-josset-mini.jpg"
               alt="Logo Maxime Josset"
               className="w-10 h-10 rounded-lg object-cover"
+              loading="lazy"
             />
             <span className="font-bold text-xl tracking-tight text-brand-slate uppercase">
               Maxime Josset
@@ -107,6 +112,7 @@ export default function App() {
         </div>
       </nav>
 
+      <main id="contenu-principal">
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
         <div className="absolute inset-0 -z-10">
@@ -160,6 +166,8 @@ export default function App() {
                   src="/images/couvreur maxime josset vendee.jpg"
                   alt="Couvreur Vendée – Maxime Josset"
                   className="w-full h-[500px] object-cover"
+                  fetchPriority="high"
+                  loading="eager"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                 <div className="absolute bottom-8 left-8 right-8 text-white">
@@ -210,6 +218,7 @@ export default function App() {
                     src={service.image}
                     alt={service.alt}
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
                   />
                 </div>
                 <div className="p-6 flex-grow">
@@ -263,11 +272,13 @@ export default function App() {
                   src="/images/couvreur maxime josset vendee v2.jpg"
                   alt="Couverture Vendée"
                   className="rounded-2xl h-64 w-full object-cover mt-8"
+                  loading="lazy"
                 />
                 <img
                   src="/images/logo-maxime-josset.jpg"
                   alt="Logo Maxime Josset – Couvreur Paysagiste Façadier Vendée"
                   className="rounded-2xl h-64 w-full object-cover"
+                  loading="lazy"
                 />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-brand-green text-white p-8 rounded-2xl shadow-xl max-w-xs">
@@ -392,6 +403,7 @@ export default function App() {
                       }
                       alt={`Zone d'intervention ${activeRegion}`}
                       className="w-full h-full object-cover"
+                      loading="lazy"
                     />
                   </div>
                 </div>
@@ -467,6 +479,8 @@ export default function App() {
         </div>
       </section>
 
+      </main>
+
       {/* Footer */}
       <footer className="bg-brand-slate/95 text-slate-400 py-10 text-center text-sm border-t border-white/10">
         <div className="flex justify-center mb-4">
@@ -474,6 +488,7 @@ export default function App() {
             src="/images/logo-maxime-josset-mini.jpg"
             alt="Logo Maxime Josset"
             className="w-10 h-10 rounded-lg object-cover opacity-80"
+            loading="lazy"
           />
         </div>
         <p className="font-semibold text-white mb-1">Maxime Josset – Couvreur · Paysagiste · Façadier</p>
