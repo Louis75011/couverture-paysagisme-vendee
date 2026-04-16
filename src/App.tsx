@@ -129,8 +129,8 @@ export default function App() {
                 <span className="text-brand-green">Façadier</span> en Vendée.
               </h1>
               <p className="text-lg text-slate-600 mb-10 max-w-lg leading-relaxed">
-                Entreprise de proximité basée à Saint-Hilaire-des-Loges. J'interviens chez vous
-                dans toute la Vendée pour vos travaux de toiture, façade et jardin. Chantier
+                Entreprise de proximité basée à Saint-Hilaire-des-Loges.
+                <strong>J'interviens chez vous dans toute la Vendée</strong> pour vos travaux de toiture, façade et jardin. Chantier
                 propre, travail soigné, devis gratuit.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -265,8 +265,8 @@ export default function App() {
                   className="rounded-2xl h-64 w-full object-cover mt-8"
                 />
                 <img
-                  src="/images/paysagiste maxime josset vendee.jpg"
-                  alt="Paysagisme Vendée"
+                  src="/images/logo-maxime-josset.jpg"
+                  alt="Logo Maxime Josset – Couvreur Paysagiste Façadier Vendée"
                   className="rounded-2xl h-64 w-full object-cover"
                 />
               </div>
@@ -440,7 +440,7 @@ export default function App() {
               <div>
                 <p className="font-bold text-white mb-1">Horaires</p>
                 <p className="text-slate-300 text-sm">Lun – Ven : 08h00 – 17h00</p>
-                <p className="text-slate-500 text-xs mt-1">Sam & Dim : Fermé</p>
+                <p className="text-slate-400 text-xs mt-1">Sam & Dim : Fermé</p>
               </div>
             </div>
             <div className="bg-white/5 rounded-2xl p-6 border border-white/10 flex items-start gap-4">
@@ -450,7 +450,7 @@ export default function App() {
               <div>
                 <p className="font-bold text-white mb-1">Zone d'intervention</p>
                 <p className="text-slate-300 text-sm">Toute la Vendée (85)</p>
-                <p className="text-slate-500 text-xs mt-1">Basé à Saint-Hilaire-des-Loges</p>
+                <p className="text-slate-400 text-xs mt-1">Basé à Saint-Hilaire-des-Loges</p>
               </div>
             </div>
             <div className="bg-white/5 rounded-2xl p-6 border border-white/10 flex items-start gap-4">
@@ -460,7 +460,7 @@ export default function App() {
               <div>
                 <p className="font-bold text-white mb-1">Devis gratuit</p>
                 <p className="text-slate-300 text-sm">Sans engagement</p>
-                <p className="text-slate-500 text-xs mt-1">Déplacement inclus</p>
+                <p className="text-slate-400 text-xs mt-1">Déplacement inclus</p>
               </div>
             </div>
           </div>
@@ -483,10 +483,10 @@ export default function App() {
           {" · "}
           <a href="mailto:maxime.josset@gmail.com" className="hover:text-brand-accent transition-colors">maxime.josset@gmail.com</a>
         </p>
-        <p className="mt-4 text-xs text-slate-500">© {new Date().getFullYear()} Maxime Josset – Tous droits réservés</p>
-        <p className="mt-2 text-xs text-slate-600">
+        <p className="mt-4 text-xs text-slate-400">© {new Date().getFullYear()} Maxime Josset – Tous droits réservés</p>
+        <p className="mt-2 text-xs text-slate-400">
           Site réalisé par{" "}
-          <a href="https://arx-systema.fr/" target="_blank" rel="noopener noreferrer" className="hover:text-slate-400 transition-colors underline underline-offset-2">
+          <a href="https://arx-systema.fr/" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white transition-colors underline underline-offset-2">
             Arx Systema
           </a>
         </p>
