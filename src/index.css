@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-green: #2d4a22;
+  --color-brand-slate: #334155;
+  --color-brand-earth: #78350f;
+  --color-brand-accent: #fbbf24;
+  --color-brand-sand-light: #fdf8f6;
+  --color-brand-sand-medium: #f5ebe0;
+  --color-brand-sand-dark: #e3d5ca;
+  
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-sand-light text-slate-900;
+  }
+}
