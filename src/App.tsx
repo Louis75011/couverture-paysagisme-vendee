@@ -403,101 +403,65 @@ export default function App() {
 
       {/* Contact */}
       <section id="contact" className="py-24 bg-brand-slate text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white/5 rounded-3xl p-8 lg:p-16 border border-white/10">
-            <div className="grid lg:grid-cols-2 gap-16">
-              <div>
-                <h2 className="text-4xl font-bold mb-6">Prêt à lancer votre projet ?</h2>
-                <p className="text-slate-300 mb-10 text-lg">
-                  Contactez-moi pour un devis gratuit ou pour échanger sur vos besoins en Vendée.
-                  Je me déplace chez vous du lundi au vendredi, de 08h à 17h.
-                </p>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="inline-block py-1 px-3 rounded-full bg-brand-green/20 text-brand-green text-xs font-bold uppercase tracking-wider mb-4">
+              Devis gratuit
+            </span>
+            <h2 className="text-4xl font-bold mb-4">Prêt à lancer votre projet ?</h2>
+            <p className="text-slate-300 text-lg max-w-xl mx-auto">
+              Appelez directement ou envoyez un e-mail — je vous réponds rapidement et me déplace
+              chez vous dans toute la Vendée, sans frais de déplacement cachés.
+            </p>
+          </div>
 
-                <div className="space-y-6">
-                  <div className="flex items-center gap-4">
-                    <div className="bg-white/10 p-4 rounded-2xl">
-                      <Phone className="w-6 h-6 text-brand-accent" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-slate-400">Téléphone</p>
-                      <a href="tel:+33602101242" className="text-xl font-bold hover:text-brand-accent transition-colors">
-                        06 02 10 12 42
-                      </a>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <div className="bg-white/10 p-4 rounded-2xl">
-                      <Mail className="w-6 h-6 text-brand-accent" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-slate-400">Email</p>
-                      <a href="mailto:maxime.josset@gmail.com" className="text-xl font-bold hover:text-brand-accent transition-colors">
-                        maxime.josset@gmail.com
-                      </a>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <div className="bg-white/10 p-4 rounded-2xl">
-                      <Clock className="w-6 h-6 text-brand-accent" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-slate-400">Horaires</p>
-                      <p className="text-base font-bold">Lun – Ven : 08h00 – 17h00</p>
-                      <p className="text-sm text-slate-400">Samedi & Dimanche : Fermé</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <div className="bg-white/10 p-4 rounded-2xl">
-                      <MapPin className="w-6 h-6 text-brand-accent" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-slate-400">Basé à</p>
-                      <p className="text-base font-bold">Saint-Hilaire-des-Loges, 85240</p>
-                      <p className="text-sm text-slate-400">Intervention dans toute la Vendée</p>
-                    </div>
-                  </div>
-                </div>
+          {/* CTAs principaux */}
+          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16">
+            <a
+              href="tel:+33602101242"
+              className="flex items-center justify-center gap-3 bg-brand-green hover:bg-brand-green/90 text-white text-xl font-bold px-10 py-5 rounded-2xl transition-all hover:shadow-lg hover:shadow-brand-green/20"
+            >
+              <Phone className="w-6 h-6" /> 06 02 10 12 42
+            </a>
+            <a
+              href="mailto:maxime.josset@gmail.com"
+              className="flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 text-white text-xl font-bold px-10 py-5 rounded-2xl border border-white/20 transition-all"
+            >
+              <Mail className="w-6 h-6" /> maxime.josset@gmail.com
+            </a>
+          </div>
+
+          {/* Infos pratiques */}
+          <div className="grid sm:grid-cols-3 gap-6">
+            <div className="bg-white/5 rounded-2xl p-6 border border-white/10 flex items-start gap-4">
+              <div className="bg-white/10 p-3 rounded-xl shrink-0">
+                <Clock className="w-6 h-6 text-brand-accent" />
               </div>
-
-              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <input
-                    type="text"
-                    placeholder="Votre nom"
-                    className="w-full bg-white/10 border border-white/20 rounded-xl px-5 py-4 focus:outline-none focus:border-brand-accent transition-colors"
-                  />
-                  <input
-                    type="email"
-                    placeholder="Votre email"
-                    className="w-full bg-white/10 border border-white/20 rounded-xl px-5 py-4 focus:outline-none focus:border-brand-accent transition-colors"
-                  />
-                </div>
-                <input
-                  type="tel"
-                  placeholder="Votre téléphone"
-                  className="w-full bg-white/10 border border-white/20 rounded-xl px-5 py-4 focus:outline-none focus:border-brand-accent transition-colors"
-                />
-                <select className="w-full bg-white/10 border border-white/20 rounded-xl px-5 py-4 focus:outline-none focus:border-brand-accent transition-colors appearance-none">
-                  <option className="bg-brand-slate">Type de prestation</option>
-                  <option className="bg-brand-slate">Couverture / Zinguerie</option>
-                  <option className="bg-brand-slate">Ravalement de façade</option>
-                  <option className="bg-brand-slate">Paysagisme / Entretien jardin</option>
-                  <option className="bg-brand-slate">Tonte / Débroussaillage</option>
-                  <option className="bg-brand-slate">Petits travaux de bâtiment</option>
-                  <option className="bg-brand-slate">Autre</option>
-                </select>
-                <textarea
-                  rows={4}
-                  placeholder="Décrivez votre projet (localisation, nature des travaux…)"
-                  className="w-full bg-white/10 border border-white/20 rounded-xl px-5 py-4 focus:outline-none focus:border-brand-accent transition-colors resize-none"
-                />
-                <button
-                  type="submit"
-                  className="w-full bg-brand-green hover:bg-brand-green/90 text-white font-bold py-4 rounded-xl transition-all hover:shadow-lg flex items-center justify-center gap-2"
-                >
-                  Envoyer ma demande de devis <ArrowRight className="w-5 h-5" />
-                </button>
-              </form>
+              <div>
+                <p className="font-bold text-white mb-1">Horaires</p>
+                <p className="text-slate-300 text-sm">Lun – Ven : 08h00 – 17h00</p>
+                <p className="text-slate-500 text-xs mt-1">Sam & Dim : Fermé</p>
+              </div>
+            </div>
+            <div className="bg-white/5 rounded-2xl p-6 border border-white/10 flex items-start gap-4">
+              <div className="bg-white/10 p-3 rounded-xl shrink-0">
+                <MapPin className="w-6 h-6 text-brand-accent" />
+              </div>
+              <div>
+                <p className="font-bold text-white mb-1">Zone d'intervention</p>
+                <p className="text-slate-300 text-sm">Toute la Vendée (85)</p>
+                <p className="text-slate-500 text-xs mt-1">Basé à Saint-Hilaire-des-Loges</p>
+              </div>
+            </div>
+            <div className="bg-white/5 rounded-2xl p-6 border border-white/10 flex items-start gap-4">
+              <div className="bg-white/10 p-3 rounded-xl shrink-0">
+                <ShieldCheck className="w-6 h-6 text-brand-accent" />
+              </div>
+              <div>
+                <p className="font-bold text-white mb-1">Devis gratuit</p>
+                <p className="text-slate-300 text-sm">Sans engagement</p>
+                <p className="text-slate-500 text-xs mt-1">Déplacement inclus</p>
+              </div>
             </div>
           </div>
         </div>
@@ -520,6 +484,12 @@ export default function App() {
           <a href="mailto:maxime.josset@gmail.com" className="hover:text-brand-accent transition-colors">maxime.josset@gmail.com</a>
         </p>
         <p className="mt-4 text-xs text-slate-500">© {new Date().getFullYear()} Maxime Josset – Tous droits réservés</p>
+        <p className="mt-2 text-xs text-slate-600">
+          Site réalisé par{" "}
+          <a href="https://arx-systema.fr/" target="_blank" rel="noopener noreferrer" className="hover:text-slate-400 transition-colors underline underline-offset-2">
+            Arx Systema
+          </a>
+        </p>
       </footer>
     </div>
   );
