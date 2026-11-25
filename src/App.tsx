@@ -27,8 +27,8 @@ export default function App() {
       description:
         "Pose, rénovation et entretien de toitures en Vendée. Expertise en zinguerie pour une étanchéité parfaite et durable de votre habitat.",
       icon: <Home className="w-8 h-8 text-brand-slate" />,
-      image: "/images/couvreur maxime josset vendee v2.jpg",
-      alt: "Couvreur Maxime Josset Vendée – travaux de toiture",
+      bigIcon: <Home className="w-16 h-16 text-brand-slate/70" aria-hidden="true" />,
+      tint: "from-slate-100 to-brand-sand-medium/60",
     },
     {
       title: "Paysagiste",
@@ -36,17 +36,17 @@ export default function App() {
       description:
         "Tonte de pelouse, débroussaillage, taille de haies et aménagement paysager. Vos extérieurs méritent un entretien régulier et soigné.",
       icon: <TreePine className="w-8 h-8 text-brand-green" />,
-      image: "/images/paysagiste maxime josset vendee.jpg",
-      alt: "Paysagiste Maxime Josset Vendée – entretien de jardin",
+      bigIcon: <TreePine className="w-16 h-16 text-brand-green/70" aria-hidden="true" />,
+      tint: "from-brand-green/10 to-brand-sand-medium/60",
     },
     {
-      title: "Façadier",
-      subtitle: "Ravalement de façade",
+      title: "Ravalement de façade",
+      subtitle: "Nettoyage & Rénovation",
       description:
         "Nettoyage, traitement et rénovation de façades pour redonner de l'éclat et protéger vos murs extérieurs contre les intempéries.",
       icon: <ShieldCheck className="w-8 h-8 text-brand-earth" />,
-      image: "/images/facade maxime josset vendee.jpg",
-      alt: "Ravalement de façade Maxime Josset Vendée",
+      bigIcon: <ShieldCheck className="w-16 h-16 text-brand-earth/70" aria-hidden="true" />,
+      tint: "from-brand-accent/20 to-brand-sand-medium/60",
     },
   ];
 
@@ -130,9 +130,9 @@ export default function App() {
               <span className="inline-block py-1 px-3 rounded-full bg-brand-green/10 text-brand-green text-xs font-bold uppercase tracking-wider mb-6">
                 Artisan local – Vendée (85)
               </span>
-              <h1 className="text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
-                Couvreur, Paysagiste &{" "}
-                <span className="text-brand-green">Façadier</span> en Vendée.
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
+                Couverture, Paysagisme &{" "}
+                <span className="text-brand-green">Ravalement de façade</span> en Vendée.
               </h1>
               <p className="text-lg text-slate-600 mb-10 max-w-lg leading-relaxed">
                 Entreprise de proximité basée à Saint-Hilaire-des-Loges.<br />
@@ -162,13 +162,22 @@ export default function App() {
               className="relative"
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                <img
-                  src="/images/couvreur maxime josset vendee.jpg"
-                  alt="Couvreur Vendée – Maxime Josset"
-                  className="w-full h-[500px] object-cover"
-                  fetchPriority="high"
-                  loading="eager"
-                />
+                <picture>
+                  <source
+                    type="image/webp"
+                    srcSet="/images/maxime-josset-480.webp 480w, /images/maxime-josset-800.webp 800w, /images/maxime-josset-937.webp 937w"
+                    sizes="(min-width: 1024px) 600px, 100vw"
+                  />
+                  <img
+                    src="/images/maxime-josset-800.jpg"
+                    alt="Maxime Josset, couvreur, au travail sur une toiture"
+                    width={800}
+                    height={1093}
+                    className="w-full h-[460px] sm:h-[500px] object-cover object-[40%_38%]"
+                    fetchPriority="high"
+                    loading="eager"
+                  />
+                </picture>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                 <div className="absolute bottom-8 left-8 right-8 text-white">
                   <div className="flex items-center gap-2 mb-2">
@@ -213,13 +222,8 @@ export default function App() {
                 whileHover={{ y: -8 }}
                 className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-100 flex flex-col"
               >
-                <div className="h-52 overflow-hidden">
-                  <img
-                    src={service.image}
-                    alt={service.alt}
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                    loading="lazy"
-                  />
+                <div className={`h-28 bg-gradient-to-br ${service.tint} flex items-center justify-center`}>
+                  {service.bigIcon}
                 </div>
                 <div className="p-6 flex-grow">
                   <div className="mb-3">{service.icon}</div>
@@ -267,17 +271,11 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
-              <div className="grid grid-cols-2 gap-4">
-                <img
-                  src="/images/couvreur maxime josset vendee v2.jpg"
-                  alt="Couverture Vendée"
-                  className="rounded-2xl h-64 w-full object-cover mt-8"
-                  loading="lazy"
-                />
+              <div className="rounded-3xl bg-gradient-to-br from-brand-sand-light to-brand-sand-medium/60 p-8 sm:p-12 flex justify-center">
                 <img
                   src="/images/logo-maxime-josset.jpg"
-                  alt="Logo Maxime Josset – Couvreur Paysagiste Façadier Vendée"
-                  className="rounded-2xl h-64 w-full object-cover"
+                  alt="Logo Maxime Josset, couverture, paysagisme et ravalement de façade en Vendée"
+                  className="rounded-2xl w-full max-w-xs aspect-square object-cover shadow-lg"
                   loading="lazy"
                 />
               </div>
@@ -394,17 +392,14 @@ export default function App() {
                   )}
                 </div>
                 <div className="lg:w-1/2 w-full">
-                  <div className="rounded-2xl overflow-hidden shadow-xl h-80">
-                    <img
-                      src={
-                        activeRegion === "Vendée"
-                          ? "/images/Domicile-Google-Saint-Hilaire-des-Loges-85240.jpg"
-                          : "/images/Banniere-Google-Saint-Hilaire-des-Loges-85240.jpg"
-                      }
-                      alt={`Zone d'intervention ${activeRegion}`}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
+                  <div className="rounded-2xl h-64 lg:h-80 bg-gradient-to-br from-brand-green/10 via-brand-sand-light to-brand-sand-medium/60 border border-brand-earth/10 flex flex-col items-center justify-center text-center p-8">
+                    <MapPin className="w-14 h-14 text-brand-green mb-4" aria-hidden="true" />
+                    <p className="text-2xl font-extrabold text-slate-900">
+                      {activeRegion === "Vendée" ? "Toute la Vendée (85)" : activeRegion}
+                    </p>
+                    <p className="text-sm text-slate-500 mt-2">
+                      {activeRegion === "Vendée" ? "Depuis Saint-Hilaire-des-Loges (85240)" : "Bientôt disponible"}
+                    </p>
                   </div>
                 </div>
               </motion.div>
@@ -491,7 +486,7 @@ export default function App() {
             loading="lazy"
           />
         </div>
-        <p className="font-semibold text-white mb-1">Maxime Josset – Couvreur · Paysagiste · Façadier</p>
+        <p className="font-semibold text-white mb-1">Maxime Josset – Couverture · Paysagisme · Ravalement de façade</p>
         <p className="mb-1">Saint-Hilaire-des-Loges, 85240 · Vendée</p>
         <p>
           <a href="tel:+33602101242" className="hover:text-brand-accent transition-colors">06 02 10 12 42</a>
